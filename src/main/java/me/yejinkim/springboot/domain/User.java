@@ -77,4 +77,12 @@ public class User implements UserDetails {
         this.nickname = nickname;
         return this;
     }
+
+    public String getProfilePictureUrl() {
+        return nickname;
+    }
+
+    public int getCurrentDay() {
+        return 0;
+    }
 }

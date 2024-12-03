@@ -9,7 +9,8 @@ import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
 @Service
-public class UserService {
+public class ResumeService {
+
     private final UserRepository userRepository;
 
     public Long save(AddUserRequest dto) {
@@ -18,15 +19,5 @@ public class UserService {
                 .email(dto.getEmail())
                 .password(encoder.encode(dto.getPassword()))
                 .build()).getId();
-    }
-
-    public User findById(Long userId) {
-        return userRepository.findById(userId)
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected user"));
-    }
-
-    public User findByEmail(String email) {
-        return userRepository.findByEmail(email)
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected user"));
     }
 }
