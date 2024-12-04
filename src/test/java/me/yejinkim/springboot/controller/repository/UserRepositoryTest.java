@@ -16,13 +16,18 @@ public class UserRepositoryTest {
     @Autowired
     private UserRepository userRepository;
 
+
     @Test
     public void shouldFindUserByEmail() {
-        User user = new User();
-        user.setEmail("test@example.com");
+        User user = User.builder()
+                .email("test@example.com")
+                .password("password") // 필요한 필드 추가
+                .nickname("testUser") // 필요한 필드 추가
+                .build();
         userRepository.save(user);
 
         Optional<User> found = userRepository.findByEmail("test@example.com");
         assertTrue(found.isPresent());
     }
+
 }
