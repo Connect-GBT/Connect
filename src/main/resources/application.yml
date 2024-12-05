@@ -26,3 +26,4 @@ spring:
 jwt:
   issuer: ajufresh@gmail.com
   secret_key: connect-springboot
+
