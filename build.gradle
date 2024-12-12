@@ -6,6 +6,7 @@ plugins {
 
 group = 'me.yejinkim'
 version = '1.0-SNAPSHOT'
+
 sourceCompatibility = '17'
 
 repositories {

@@ -16,7 +16,7 @@ public class ResumeService {
     public Long save(AddUserRequest dto) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         return userRepository.save(User.builder()
-                .email(dto.getEmail())
+                .nickname(dto.getNickname())
                 .password(encoder.encode(dto.getPassword()))
                 .build()).getId();
     }
